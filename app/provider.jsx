@@ -1,10 +1,14 @@
 "use client";
 
+import { UserContext } from '../context/UserContext';
 import { useUser } from '@clerk/nextjs';
-import react, { useEffect } from 'react';
+import react, { useEffect, useState } from 'react';
 function Provider({children}){
 
     const { user } = useUser();
+
+    const [userDetail, setUserDetail] = useState();
+
 
     useEffect(() => {
         user && CreateNewUser();
@@ -29,11 +33,14 @@ function Provider({children}){
             console.error('Failed to parse JSON:', e);
         }
         console.log(data);
+        setUserDetail(data);
     }
 
     return (
         <div>
-            {children}
+            <UserContext.Provider value={{userDetail, setUserDetail}}>
+                {children}
+            </UserContext.Provider>
         </div>
     )
 }
