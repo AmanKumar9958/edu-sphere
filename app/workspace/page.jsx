@@ -1,9 +1,9 @@
 import React from 'react'
 
-const workspace = () => {
+const Workspace = () => {
     return (
         <div>workspace</div>
     )
 }
 
-export default workspace
+export default Workspace

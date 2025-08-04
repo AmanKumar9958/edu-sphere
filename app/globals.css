@@ -144,3 +144,10 @@
     --sidebar-ring: oklch(0.439 0 0);
   }
 }
+
+[data-sidebar="trigger"] {
+  display: block !important;
+  color: var(--sidebar-foreground, #333) !important;
+  background: var(--sidebar, #fff) !important;
+  z-index: 2000 !important;
+}
