@@ -10,7 +10,7 @@ const WorkspaceProvider = ({children}) => {
             <div style={{
                 position: 'fixed',
                 top: '1rem',
-                left: '1rem',
+                left: '14rem',
                 zIndex: 2000
             }}>
                 <SidebarTrigger />
